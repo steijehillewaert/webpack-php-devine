@@ -100,12 +100,6 @@ const productionConfig = merge([
         plugins: [
           imageminJpegRecompress({})
         ]
-      }),
-      new CriticalPlugin({
-        src: 'index.html',
-        inline: true,
-        minify: true,
-        dest: 'index.html'
       })
     ]
   }
