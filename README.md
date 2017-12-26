@@ -1,4 +1,4 @@
-# webpack-php-devine
+# Webpack config with PHP
 
 Webpack config with php for Devine :graduation:
 
