@@ -1,0 +1,15 @@
+@import 'reset';
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after { /* stylelint-disable-line */
+  box-sizing: inherit;
+}
+
+body {
+  background: url(../assets/images/pattern.png);
+  font-size: 2rem;
+}
