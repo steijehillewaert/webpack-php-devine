@@ -1,10 +1,12 @@
+'use strict';
+
 {
 
-  const $todosList = document.getElementById(`todosList`),
+  var $todosList = document.getElementById(`todosList`),
     $insertTodoForm = document.getElementById(`insertTodoForm`),
     $inputText = document.getElementById(`inputText`);
 
-  const init = () => {
+  var init = function init() {
     if ($todosList) {
       loadTodos();
     }
@@ -13,44 +15,48 @@
     }
   };
 
-  const loadTodos = () => {
+  var loadTodos = function loadTodos() {
     fetch(`index.php`, {
       headers: new Headers({
         Accept: `application/json`
       })
-    })
-    .then(r => r.json())
-    .then(data => handleLoadTodos(data));
+    }).then(function (r) {
+      return r.json();
+    }).then(function (data) {
+      return handleLoadTodos(data);
+    });
   };
 
-  const handleLoadTodos = data => {
-    $todosList.innerHTML = data
-      .map(todo => createTodoListItem(todo))
-      .join(``);
+  var handleLoadTodos = function handleLoadTodos(data) {
+    $todosList.innerHTML = data.map(function (todo) {
+      return createTodoListItem(todo);
+    }).join(``);
   };
 
-  const createTodoListItem = todo => {
-    return `<li>${todo.text}</li>`;
+  var createTodoListItem = function createTodoListItem(todo) {
+    return `<li>` + todo.text + `</li>`;
   };
 
-  const handleSubmitInsertTodoForm = e => {
+  var handleSubmitInsertTodoForm = function handleSubmitInsertTodoForm(e) {
     e.preventDefault();
-    fetch($insertTodoForm.getAttribute('action'), {
+    fetch($insertTodoForm.getAttribute(`action`), {
       headers: new Headers({
         Accept: `application/json`
       }),
-      method: 'post',
+      method: `post`,
       body: new FormData($insertTodoForm)
-    })
-    .then(r => r.json())
-    .then(data => handleLoadSubmit(data));
+    }).then(function (r) {
+      return r.json();
+    }).then(function (data) {
+      return handleLoadSubmit(data);
+    });
   };
 
-  const handleLoadSubmit = data => {
-    const $errorText = document.querySelector(`.error--text`);
-    $errorText.textContent = '';
-    if (data.result == 'ok') {
-      $inputText.value = '';
+  var handleLoadSubmit = function handleLoadSubmit(data) {
+    var $errorText = document.querySelector(`.error--text`);
+    $errorText.textContent = ``;
+    if (data.result == `ok`) {
+      $inputText.value = ``;
       loadTodos();
     } else {
       if (data.errors.text) {

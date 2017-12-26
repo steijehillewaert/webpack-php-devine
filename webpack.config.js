@@ -36,7 +36,17 @@ const commonConfig = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        loader: `babel-loader`
+        use: [
+          {
+            loader: `babel-loader`
+          },
+          {
+            loader: `eslint-loader`,
+            options: {
+              fix: true,
+            }
+          }
+        ]
       },
       {
         test: /\.(jpe?g|png|gif|webp|svg)$/,
@@ -70,11 +80,6 @@ const commonConfig = {
             },
           },
         ]
-      },
-      {
-        test: /\.(js)$/,
-        exclude: /node_modules/,
-        loader: `babel-loader`
       }
     ]
   },
