@@ -1,6 +1,6 @@
 # Webpack config with PHP
 
-Webpack config with php for Devine :graduation:
+Webpack config with php for Devine 🎓
 
 ## Specs
 * Eslinter
