@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Webpack and php example",
   "main": "index.js",
-  "author": "Steije Hillewaert",
+  "author": "Author",
   "license": "MIT",
   "scripts": {
     "production": "npm run clean && npm run copydist && NODE_ENV=production webpack -p",
-    "development": "mamp ./src & NODE_ENV=development webpack-dev-server --open 'Google Chrome'",
+    "development": "NODE_ENV=development webpack-dev-server --open 'Google Chrome'",
     "copydist": "ditto ./src/ ./dist/ && rm -rf ./dist/css && rm -rf ./dist/js",
     "clean": "rm -rf ./dist"
   },
@@ -29,7 +29,6 @@
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-webpack-plugin": "^1.5.2",
     "imports-loader": "^0.7.1",
-    "mamp": "^0.0.7",
     "postcss": "^6.0.14",
     "postcss-color-function": "^4.0.1",
     "postcss-cssnext": "^3.0.2",
