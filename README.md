@@ -19,7 +19,7 @@ Run the project with development server on port 8080:
 `npm run development` or `yarn development`
 
 ### Backend
-The Backend run on a local server on port 8888 using mamp in the command line (https://www.npmjs.com/package/mamp).
+Run the backend on a local server environment for example: https://www.mamp.info/
 
 #### Generate a production Build
 Generate a production build:
